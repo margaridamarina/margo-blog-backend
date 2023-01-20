@@ -46,14 +46,39 @@ show databases;
 ```
 create database blog;
 ```
+### Criando tabela Categorias
+#### Obs: a ordem é importante - criar a partir da que não tem ligação com nenhuma tabela
+```
+$ npx sequelize-cli model:create --name Categorias --attributes title:string
+```
+### Criando tabela Subcategorias
+```
+$ npx sequelize-cli model:create --name Subcategorias --attributes title:string
+```
 ### Criando tabela Posts
 ```
 $ npx sequelize-cli model:create --name Posts --attributes title:string,image:string,description:string,text:string
 ```
-### Criando migração
+### Fazendo migrações após fazer a associação entre tabelas 
 ```
 $ npx sequelize-cli db:migrate
 ```
+### Criando seeder categoria
+```
+$ npx sequelize-cli seed:generate --name demo-categoria
+```
+### Criando seeder subcategoria
+```
+$ npx sequelize-cli seed:generate --name demo-subcategoria
+```
+### Criando seeder post
+```
+$ npx sequelize-cli seed:generate --name demo-post
+```
+### Enviando dados para o banco após incluir os dados nos seeders com foreing keys
+```
+$ npx sequelize-cli db:seed:all
+``` 
 ### Entrando na tabela
 ```
 use blog;
@@ -66,51 +91,11 @@ show tables;
 ```
 describe Posts;
 ```
-### Criando linha na tabela Posts
-```
-insert into Posts (title, image, description, text, createdAt, updatedAt) values ("Sustentabilidade é vida", "image.com.br", "Cuidar do mundo é tudo", "Era uma vez uma árvore", NOW(), NOW());
-```
 ### Mostrando tudo na tabela Posts
 ```
 select * from Posts;
 ```
-### Criando seeder post
+### Criando linha na tabela Posts
 ```
-$ npx sequelize-cli seed:generate --name demo-post
+insert into Posts (title, image, description, text, createdAt, updatedAt) values ("Sustentabilidade é vida", "image.com.br", "Cuidar do mundo é tudo", "Era uma vez uma árvore", NOW(), NOW());
 ```
-### Enviando dados para o banco
-```
-$ npx sequelize-cli db:seed:all
-```
-<!-- ### Criando tabela Níveis
-```
-$ npx sequelize-cli model:create --name Niveis --attributes descr_nivel:string
-```
-### Criando tabela Turmas
-```
-$ npx sequelize-cli model:create --name Turmas --attributes data_inicio:dateonly
-```
-### Criando tabela Matrículas
-```
-$ npx sequelize-cli model:create --name Matriculas --attributes status:string
-```
-### Fazendo migrações após associação entre tabelas
-```
-$ npx sequelize-cli db:migrate
-```
-### Criando seeder nivel
-```
-$ npx sequelize-cli seed:generate --name demo-nivel
-```
-### Criando seeder turma
-```
-$ npx sequelize-cli seed:generate --name demo-turma
-```
-### Criando seeder matricula
-```
-$ npx sequelize-cli seed:generate --name demo-matricula
-```
-### Enviando dados para o banco
-```
-$ npx sequelize-cli db:seed:all
-``` -->
