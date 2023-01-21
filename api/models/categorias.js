@@ -1,25 +1,30 @@
+// 'use strict';
+// module.exports = (sequelize, DataTypes) => {
+//   class Categorias extends Model {
+//     static associate(models) {
+//       Categorias.belongsTo(models.Subcategorias, {
+//         foreignKey: 'categoria_id'
+//       })
+//     }
+//   }
+//   Categorias.init({
+//     title: DataTypes.STRING
+//   }, {
+//     sequelize,
+//     modelName: 'Categorias',
+//   });
+//   return Categorias;
+// };
+
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Categorias extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      Categorias.belongsTo(models.Subcategorias, {
-        foreignKey: 'categoria_id'
-      })
-    }
-  }
-  Categorias.init({
+  const Categorias = sequelize.define('Categorias', {
     title: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Categorias',
-  });
+  }, {});
+  Categorias.associate = function(models) {
+    Categorias.hasMany(models.Subcategorias, {
+      foreignKey: 'categoria_id'
+    })
+  };
   return Categorias;
 };
