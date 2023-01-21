@@ -18,13 +18,13 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      text: {
-        type: Sequelize.STRING
-      },
       subcategoria_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {model: 'Subcategorias', key: 'id'}
+      },
+      text: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
