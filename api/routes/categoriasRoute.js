@@ -11,4 +11,6 @@ router.put('/categorias/:categoriaId', CategoriaController.atualizaCategoria)
 router.delete('/categorias/:categoriaId', CategoriaController.apagaCategoria)
 // router.post('/categorias/:categoriaId', CategoriaController.restauraCategoria)
 
+router.get('/subcategorias/categorias/:categoriaId', CategoriaController.pegaTodasAsSubcategoriasDeUmaCategoria)
+
 module.exports = router

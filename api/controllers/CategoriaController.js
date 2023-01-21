@@ -80,6 +80,21 @@ class CategoriaController {
   //     return res.status(500).json(error.message)
   //   }
   // }
+
+  static async pegaTodasAsSubcategoriasDeUmaCategoria(req, res) {
+    const { categoriaId } = req.params;
+    try {
+      const todasAsSubcategoriasDeUmaCategoria = await database.Subcategorias.findAll( { 
+        where: { 
+          categoria_id: Number(categoriaId) 
+        }
+      })
+      return res.status(200).json(todasAsSubcategoriasDeUmaCategoria)
+    } catch (error) {
+      return res.status(500).json(error.message)
+    }
+  }
+
 }
 
 module.exports = CategoriaController
