@@ -74,6 +74,21 @@ class PostController {
   //     return res.status(500).json(error.message)
   //   }
   // }
+
+
+  static async pegaTodosOsPostsDeUmaSubcategoria(req, res){
+    const { subcategoriaId } = req.params
+    try {
+      const todosOsPostsDeUmaSubcategoria = await database.Posts.findAll({
+        where: { 
+          subcategoria_id: Number(subcategoriaId) 
+        }
+      })
+      return res.status(200).json(todosOsPostsDeUmaSubcategoria)  
+    } catch (error) {
+      return res.status(500).json(error.message)
+    }
+  }
 }
 
 module.exports = PostController
