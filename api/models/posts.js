@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Posts.associate = function(models) {
     Posts.belongsTo(models.Subcategorias, {
-      foreignKey: 'subcategoria_id'
+      foreignKey: 'subcategoria_title'
     })
   };
   return Posts;
