@@ -5,10 +5,10 @@ const router = Router()
 
 // router.get('/subcategorias', SubcategoriaController.pegaSubcategoriasAtivas)
 router.get('/subcategorias', SubcategoriaController.pegaTodasAsSubcategorias)
-router.get('/subcategorias/:subcategoriaId', SubcategoriaController.pegaUmaSubcategoria)
+router.get('/subcategorias/:subcategoriaTitle', SubcategoriaController.pegaUmaSubcategoriaPorTitulo)
 router.post('/subcategorias', SubcategoriaController.criaSubcategoria)
-router.put('/subcategorias/:subcategoriaId', SubcategoriaController.atualizaSubcategoria)
-router.delete('/subcategorias/:subcategoriaId', SubcategoriaController.apagaSubcategoria)
+router.put('/subcategorias/:subcategoriaTitle', SubcategoriaController.atualizaSubcategoria)
+router.delete('/subcategorias/:subcategoriaTitle', SubcategoriaController.apagaSubcategoria)
 // router.post('/subcategorias/:subcategoriaId', SubcategoriaController.restauraSubcategoria)
 
 // router.get('/posts/:postId/subcategorias/:subcategoriaId', SubcategoriaController.pegaUmaSubcategoria)
