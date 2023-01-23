@@ -2,26 +2,30 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert('Subcategorias', [
 			{
+				id: 1,
 				title: 'Reciclagem',
-        		categoria_id: 1,
+        		categoria_title: 'Sustentabilidade',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
+				id: 2,
 				title: 'Saudável',
-        		categoria_id: 2,
+        		categoria_title: 'Culinária',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
+				id: 3,
 				title: 'Meditação',
-        		categoria_id: 3,				
+        		categoria_title: 'Zen',				
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
-				title: 'Green tech',
-        		categoria_id: 4,
+				id: 4,
+				title: 'GreenTech',
+        		categoria_title: 'Tecnologia',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}
