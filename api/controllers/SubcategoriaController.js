@@ -20,13 +20,12 @@ class SubcategoriaController {
     }
   }
 
-  static async pegaUmaSubcategoria(req, res) {
-    const { subcategoriaId } = req.params
+  static async pegaUmaSubcategoriaPorTitulo(req, res) {
+    const { subcategoriaTitle } = req.params
     try {
-      console.log(55)
       const umaSubcategoria = await database.Subcategorias.findOne( { 
         where: { 
-          id: Number(subcategoriaId) 
+          title: String(subcategoriaTitle) 
         }
       })
       return res.status(200).json(umaSubcategoria)
@@ -37,8 +36,8 @@ class SubcategoriaController {
   }
 
   static async criaSubcategoria(req, res) {
-    const { subcategoriaId } = req.params
-    const novaSubcategoria = { ...req.body, subcategoria_id: Number(subcategoriaId) }
+    const { subcategoriaTitle } = req.params
+    const novaSubcategoria = { ...req.body, subcategoria_title: String(subcategoriaTitle) }
     try {
       const novaSubcategoriaCriada = await database.Subcategorias.create(novaSubcategoria)
       return res.status(200).json(novaSubcategoriaCriada)
@@ -48,14 +47,17 @@ class SubcategoriaController {
   }
 
   static async atualizaSubcategoria(req, res) {
-    const { subcategoriaId } = req.params
+    const { subcategoriaTitle } = req.params
     const novasInfos = req.body
     try {
       await database.Subcategorias.update(novasInfos, { 
         where: { 
-          id: Number(subcategoriaId),
+          title: String(subcategoriaTitle),
         }})
-      const SubcategoriaAtualizada = await database.Subcategorias.findOne( { where: { id: Number(subcategoriaId) }})
+      const SubcategoriaAtualizada = await database.Subcategorias.findOne( { 
+        where: { 
+          title: String(subcategoriaTitle) }
+        })
       return res.status(200).json(SubcategoriaAtualizada)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -63,21 +65,23 @@ class SubcategoriaController {
   }
 
   static async apagaSubcategoria(req, res) {
-    const { subcategoriaId } = req.params
+    const { subcategoriaTitle } = req.params
     try {
-      await database.Subcategorias.destroy({ where: { id: Number(subcategoriaId) }})
-      return res.status(200).json({ mensagem: `id ${subcategoriaId} deletado` })
-
+      await database.Subcategorias.destroy(
+        { where: { 
+          title: String(subcategoriaTitle) }
+        })
+      return res.status(200).json({ mensagem: `subcategoria ${subcategoriaTitle} deletada` })
     } catch (error) {
       return res.status(500).json(error.message)
     }
   }
   
   // static async restauraSubcategoria(req, res) {
-  //   const { subcategoriaId } = req.params
+  //   const { subcategoriaTitle } = req.params
   //   try {
-  //     await database.Subcategorias.restore({ where: { id: Number(subcategoriaId) }})
-  //     return res.status(200).json({ mensagem: `id ${subcategoriaId} restaurado` })
+  //     await database.Subcategorias.restore({ where: { id: Number(subcategoriaTitle) }})
+  //     return res.status(200).json({ mensagem: `id ${subcategoriaTitle} restaurado` })
   //   } catch (error) {
   //     return res.status(500).json(error.message)
   //   }

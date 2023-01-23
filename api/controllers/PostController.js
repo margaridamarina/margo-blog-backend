@@ -77,11 +77,11 @@ class PostController {
 
 
   static async pegaTodosOsPostsDeUmaSubcategoria(req, res){
-    const { subcategoriaId } = req.params
+    const { subcategoriaTitle } = req.params
     try {
       const todosOsPostsDeUmaSubcategoria = await database.Posts.findAll({
         where: { 
-          subcategoria_id: Number(subcategoriaId) 
+          subcategoria_title: String(subcategoriaTitle) 
         }
       })
       return res.status(200).json(todosOsPostsDeUmaSubcategoria)  

@@ -20,12 +20,12 @@ class CategoriaController {
     }
   }
 
-  static async pegaUmaCategoria(req, res) {
-    const { categoriaId } = req.params;
+  static async pegaUmaCategoriaPorTitutlo(req, res) {
+    const { categoriaTitle } = req.params;
     try {
       const umPost = await database.Categorias.findOne( { 
         where: { 
-          id: Number(categoriaId) 
+          title: String(categoriaTitle) 
         }
       })
       return res.status(200).json(umPost)
@@ -35,8 +35,8 @@ class CategoriaController {
   }
 
   static async criaCategoria(req, res) {
-    const { categoriaId } = req.params
-    const novaCategoria = { ...req.body, categoria_id: Number(categoriaId) }
+    const { categoriaTitle } = req.params
+    const novaCategoria = { ...req.body, categoria_title: String(categoriaTitle) }
     try {
       const novaCategoriaCriada = await database.Categorias.create(novaCategoria)
       return res.status(200).json(novaCategoriaCriada)
@@ -46,14 +46,14 @@ class CategoriaController {
   }
 
   static async atualizaCategoria(req, res) {
-    const { categoriaId } = req.params
+    const { categoriaTitle } = req.params
     const novasInfos = req.body
     try {
       await database.Categorias.update(novasInfos, { 
         where: { 
-          id: Number(categoriaId) 
+          title: String(categoriaTitle) 
         }})
-      const CategoriaAtualizada = await database.Categorias.findOne( { where: { id: Number(categoriaId) }})
+      const CategoriaAtualizada = await database.Categorias.findOne( { where: { title: String(categoriaTitle) }})
       return res.status(200).json(CategoriaAtualizada)
     } catch (error) {
       return res.status(500).json(error.message)
@@ -61,10 +61,10 @@ class CategoriaController {
   }
 
   static async apagaCategoria(req, res) {
-    const { categoriaId } = req.params
+    const { categoriaTitle } = req.params
     try {
-      await database.Categorias.destroy({ where: { id: Number(categoriaId) }})
-      return res.status(200).json({ mensagem: `id ${categoriaId} deletado` })
+      await database.Categorias.destroy({ where: { title: String(categoriaTitle) }})
+      return res.status(200).json({ mensagem: `categoria ${categoriaTitle} deletada` })
 
     } catch (error) {
       return res.status(500).json(error.message)
@@ -72,21 +72,21 @@ class CategoriaController {
   }
   
   // static async restauraCategoria(req, res) {
-  //   const { categoriaId } = req.params
+  //   const { categoriaTitle } = req.params
   //   try {
-  //     await database.Categorias.restore({ where: { id: Number(categoriaId) }})
-  //     return res.status(200).json({ mensagem: `id ${categoriaId} restaurado` })
+  //     await database.Categorias.restore({ where: { title: String(categoriaTitle) }})
+  //     return res.status(200).json({ mensagem: `id ${categoriaTitle} restaurado` })
   //   } catch (error) {
   //     return res.status(500).json(error.message)
   //   }
   // }
 
   static async pegaTodasAsSubcategoriasDeUmaCategoria(req, res) {
-    const { categoriaId } = req.params;
+    const { categoriaTitle } = req.params;
     try {
       const todasAsSubcategoriasDeUmaCategoria = await database.Subcategorias.findAll( { 
         where: { 
-          categoria_id: Number(categoriaId) 
+          categoria_title: String(categoriaTitle) 
         }
       })
       return res.status(200).json(todasAsSubcategoriasDeUmaCategoria)
