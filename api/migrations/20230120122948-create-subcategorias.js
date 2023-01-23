@@ -5,17 +5,17 @@ module.exports = {
     await queryInterface.createTable('Subcategorias', {
       id: {
         allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
+        primaryKey: true,
         type: Sequelize.STRING
       },
-      categoria_id: {
+      categoria_title: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {model: 'Categorias', key: 'id'}
+        type: Sequelize.STRING,
+        references: {model: 'Categorias', key: 'title'}
       },
       createdAt: {
         allowNull: false,

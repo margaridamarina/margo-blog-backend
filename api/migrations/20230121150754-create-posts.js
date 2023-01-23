@@ -18,10 +18,10 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      subcategoria_id: {
+      subcategoria_title: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {model: 'Subcategorias', key: 'id'}
+        type: Sequelize.STRING,
+        references: {model: 'Subcategorias', key: 'title'}
       },
       text: {
         type: Sequelize.STRING
