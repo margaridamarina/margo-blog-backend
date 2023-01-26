@@ -59,6 +59,14 @@ $ npx sequelize-cli model:create --name Subcategorias --attributes title:string
 ```
 $ npx sequelize-cli model:create --name Posts --attributes title:string,image:string,description:string,text:string
 ```
+### Criando tabela Lojas
+```
+$ npx sequelize-cli model:create --name Lojas --attributes title:string,image:string,description:string,text:string
+```
+### Criando tabela Receitas
+```
+$ npx sequelize-cli model:create --name Receitas --attributes title:string,image:string,description:string,text:string
+```
 ### Fazendo migrações após fazer a associação entre tabelas 
 ```
 $ npx sequelize-cli db:migrate
@@ -74,6 +82,14 @@ $ npx sequelize-cli seed:generate --name demo-subcategoria
 ### Criando seeder post
 ```
 $ npx sequelize-cli seed:generate --name demo-post
+```
+### Criando seeder loja
+```
+$ npx sequelize-cli seed:generate --name demo-loja
+```
+### Criando seeder receita
+```
+$ npx sequelize-cli seed:generate --name demo-receita
 ```
 ### Enviando dados para o banco após incluir os dados nos seeders com foreing keys
 ```
