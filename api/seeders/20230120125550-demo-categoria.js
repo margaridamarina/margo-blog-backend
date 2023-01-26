@@ -9,7 +9,7 @@ module.exports = {
 			},
 			{
 				id: 2,
-				title: 'Culinária',
+				title: 'Receitas',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
@@ -22,6 +22,12 @@ module.exports = {
 			{
 				id: 4,
 				title: 'Tecnologia',
+				createdAt: new Date(),
+				updatedAt: new Date()
+			},
+			{
+				id: 5,
+				title: 'Limpeza',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}

@@ -15,7 +15,7 @@ module.exports = {
 				image: 'https://img.freepik.com/vetores-premium/conceito-de-comida-saudavel-legumes-frutas-ilustracao-vetorial-de-agua-e-leite_36358-307.jpg?w=2000',
 				description: 'Comer, comer',
 				text: 'Comer é muito bom',
-				subcategoria_title: 'Saudável',
+				subcategoria_title: 'Culinária',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
