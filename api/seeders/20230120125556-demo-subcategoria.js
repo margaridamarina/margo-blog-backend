@@ -17,7 +17,7 @@ module.exports = {
 			},
 			{
 				id: 4,
-				title: 'GreenTech',
+				title: 'Green Tech',
         		categoria_title: 'Tecnologia',
 				createdAt: new Date(),
 				updatedAt: new Date()

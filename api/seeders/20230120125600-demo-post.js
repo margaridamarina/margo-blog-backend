@@ -11,15 +11,6 @@ module.exports = {
 				updatedAt: new Date()
 			},
 			{
-				title: 'Cozinhar é vida',
-				image: 'https://img.freepik.com/vetores-premium/conceito-de-comida-saudavel-legumes-frutas-ilustracao-vetorial-de-agua-e-leite_36358-307.jpg?w=2000',
-				description: 'Comer, comer',
-				text: 'Comer é muito bom',
-				subcategoria_title: 'Culinária',
-				createdAt: new Date(),
-				updatedAt: new Date()
-			},
-			{
 				title: 'Meditar é vida',
 				image: 'https://img.freepik.com/vetores-gratis/pessoas-planas-organicas-meditando-ilustracao_23-2148906557.jpg?w=2000',
 				description: 'Vamos meditar',
