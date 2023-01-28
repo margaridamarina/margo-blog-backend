@@ -37,7 +37,7 @@ class SubcategoriaController {
 
   static async criaSubcategoria(req, res) {
     const { subcategoriaTitle } = req.params
-    const novaSubcategoria = { ...req.body, subcategoria_title: String(subcategoriaTitle) }
+    const novaSubcategoria = { ...req.body, subcategory_title: String(subcategoriaTitle) }
     try {
       const novaSubcategoriaCriada = await database.Subcategorias.create(novaSubcategoria)
       return res.status(200).json(novaSubcategoriaCriada)

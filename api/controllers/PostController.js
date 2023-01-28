@@ -81,7 +81,7 @@ class PostController {
     try {
       const todosOsPostsDeUmaSubcategoria = await database.Posts.findAll({
         where: { 
-          subcategoria_title: String(subcategoriaTitle) 
+          subcategory_title: String(subcategoriaTitle) 
         }
       })
       return res.status(200).json(todosOsPostsDeUmaSubcategoria)  

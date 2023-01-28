@@ -21,7 +21,7 @@ module.exports = {
       text: {
         type: Sequelize.STRING
       },
-      subcategoria_title: {
+      subcategory_title: {
         allowNull: false,
         type: Sequelize.STRING,
         references: {model: 'Subcategorias', key: 'title'}

@@ -5,10 +5,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Subcategorias.associate = function(models) {
     Subcategorias.hasMany(models.Posts, {
-      foreignKey: 'subcategoria_title'
+      foreignKey: 'subcategory_title'
     })
     Subcategorias.belongsTo(models.Categorias, {
-      foreignKey: 'categoria_title'
+      foreignKey: 'category_title'
     })
   };
   return Subcategorias;

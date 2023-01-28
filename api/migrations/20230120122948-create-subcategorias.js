@@ -12,7 +12,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.STRING
       },
-      categoria_title: {
+      category_title: {
         allowNull: false,
         type: Sequelize.STRING,
         references: {model: 'Categorias', key: 'title'}

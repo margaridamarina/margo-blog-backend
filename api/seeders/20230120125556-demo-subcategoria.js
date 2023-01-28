@@ -4,56 +4,56 @@ module.exports = {
 			{
 				id: 1,
 				title: 'Reciclagem',
-        		categoria_title: 'Sustentabilidade',
+        		category_title: 'Sustentabilidade',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 3,
 				title: 'Meditação',
-        		categoria_title: 'Zen',				
+        		category_title: 'Zen',				
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 4,
 				title: 'Green Tech',
-        		categoria_title: 'Tecnologia',
+        		category_title: 'Tecnologia',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 5,
 				title: 'Moda sustentável',
-        		categoria_title: 'Sustentabilidade',
+        		category_title: 'Sustentabilidade',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 6,
 				title: 'Corpo e casa',
-        		categoria_title: 'Limpeza',
+        		category_title: 'Limpeza',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 7,
 				title: 'Casa',
-        		categoria_title: 'Receitas',
+        		category_title: 'Receitas',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 8,
 				title: 'Corpo',
-        		categoria_title: 'Receitas',
+        		category_title: 'Receitas',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 9,
 				title: 'Culinária',
-        		categoria_title: 'Receitas',
+        		category_title: 'Receitas',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}

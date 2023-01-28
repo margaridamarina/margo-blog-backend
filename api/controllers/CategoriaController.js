@@ -36,7 +36,7 @@ class CategoriaController {
 
   static async criaCategoria(req, res) {
     const { categoriaTitle } = req.params
-    const novaCategoria = { ...req.body, categoria_title: String(categoriaTitle) }
+    const novaCategoria = { ...req.body, category_title: String(categoriaTitle) }
     try {
       const novaCategoriaCriada = await database.Categorias.create(novaCategoria)
       return res.status(200).json(novaCategoriaCriada)
@@ -86,7 +86,7 @@ class CategoriaController {
     try {
       const todasAsSubcategoriasDeUmaCategoria = await database.Subcategorias.findAll( { 
         where: { 
-          categoria_title: String(categoriaTitle) 
+          category_title: String(categoriaTitle) 
         }
       })
       return res.status(200).json(todasAsSubcategoriasDeUmaCategoria)
