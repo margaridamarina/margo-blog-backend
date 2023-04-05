@@ -12,8 +12,10 @@ class PostController {
 
   static async pegaTodosOsPosts(req, res){
     try {
-      const todosOsPosts = await database.Posts.findAll()
-      return res.status(200).json(todosOsPosts)  
+      const TodosOsPosts = await database.Posts.findAll({
+        where: req.query
+      })
+      return res.status(200).json(TodosOsPosts)  
     } catch (error) {
       return res.status(500).json(error.message)
     }
@@ -75,6 +77,19 @@ class PostController {
   //   }
   // }
 
+  static async pegaTodosOsPostsDeUmaCategoria(req, res){
+    const { categoriaTitle } = req.params
+    try {
+      const todosOsPostsDeUmaCategoria = await database.Posts.findAll({
+        where: { 
+          category_title: String(categoriaTitle) 
+        }
+      })
+      return res.status(200).json(todosOsPostsDeUmaCategoria)  
+    } catch (error) {
+      return res.status(500).json(error.message)
+    }
+  }
 
   static async pegaTodosOsPostsDeUmaSubcategoria(req, res){
     const { subcategoriaTitle } = req.params

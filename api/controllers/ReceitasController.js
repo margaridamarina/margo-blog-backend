@@ -12,8 +12,10 @@ class ReceitaController {
 
   static async pegaTodasAsReceitas(req, res){
     try {
-      const TodasAsReceitas = await database.Receitas.findAll()
-      return res.status(200).json(TodasAsReceitas)  
+      const todasAsReceitas = await database.Receitas.findAll({
+        where: req.query
+      })
+      return res.status(200).json(todasAsReceitas)  
     } catch (error) {
       return res.status(500).json(error.message)
     }
@@ -75,6 +77,19 @@ class ReceitaController {
   //   }
   // }
 
+    static async pegaTodasAsReceitasDeUmaCategoria(req, res){
+    const { categoriaTitle } = req.params
+    try {
+      const todasAsReceitasDeUmaCategoria = await database.Receitas.findAll({
+        where: { 
+          category_title: String(categoriaTitle) 
+        }
+      })
+      return res.status(200).json(todasAsReceitasDeUmaCategoria)  
+    } catch (error) {
+      return res.status(500).json(error.message)
+    }
+  }
 
   static async pegaTodasAsReceitasDeUmaSubcategoria(req, res){
     const { subcategoriaTitle } = req.params

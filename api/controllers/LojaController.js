@@ -12,7 +12,9 @@ class LojaController {
 
   static async pegaTodasAsLojas(req, res){
     try {
-      const TodasAsLojas = await database.Lojas.findAll()
+      const TodasAsLojas = await database.Lojas.findAll({
+        where: req.query
+      })
       return res.status(200).json(TodasAsLojas)  
     } catch (error) {
       return res.status(500).json(error.message)
@@ -75,6 +77,19 @@ class LojaController {
   //   }
   // }
 
+  static async pegaTodasAsLojasDeUmaCategoria(req, res){ 
+    const { categoriaTitle } = req.params
+    try {
+      const TodasAsLojasDeUmaCategoria = await database.Lojas.findAll({
+        where: { 
+          category_title: String(categoriaTitle) 
+        }
+      })
+      return res.status(200).json(TodasAsLojasDeUmaCategoria)  
+    } catch (error) {
+      return res.status(500).json(error.message)
+    }
+  }
 
   static async pegaTodasAsLojasDeUmaSubcategoria(req, res){
     const { subcategoriaTitle } = req.params
