@@ -22,14 +22,14 @@ class ReceitaController {
   }
 
   static async pegaUmaReceita(req, res) {
-    const { ReceitaId } = req.params
+    const { receitaId } = req.params
     try {
-      const UmaReceita = await database.Receitas.findOne( { 
+      const umaReceita = await database.Receitas.findOne( { 
         where: { 
-          id: Number(ReceitaId) 
+          id: Number(receitaId) 
         }
       })
-      return res.status(200).json(UmaReceita)
+      return res.status(200).json(umaReceita)
     } catch (error) {
       return res.status(500).json(error.message)
     }

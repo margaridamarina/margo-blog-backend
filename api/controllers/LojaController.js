@@ -22,14 +22,14 @@ class LojaController {
   }
 
   static async pegaUmaLoja(req, res) {
-    const { LojaId } = req.params
+    const { lojaId } = req.params
     try {
-      const UmaLoja = await database.Lojas.findOne( { 
+      const umaLoja = await database.Lojas.findOne( { 
         where: { 
-          id: Number(LojaId) 
+          id: Number(lojaId) 
         }
       })
-      return res.status(200).json(UmaLoja)
+      return res.status(200).json(umaLoja)
     } catch (error) {
       return res.status(500).json(error.message)
     }
