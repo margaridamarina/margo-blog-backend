@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     Posts.belongsTo(models.Subcategorias, {
       foreignKey: 'subcategory_title'
     })
+    Posts.belongsTo(models.Categorias, {
+      foreignKey: 'category_title'
+    })
   };
   return Posts;
 };

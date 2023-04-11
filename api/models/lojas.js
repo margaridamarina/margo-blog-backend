@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Lojas.associate = function(models) {
     Lojas.belongsTo(models.Subcategorias, {
-      foreignKey: 'subcategoria_title'
+      foreignKey: 'subcategory_title'
+    })
+    Lojas.belongsTo(models.Categorias, {
+      foreignKey: 'category_title'
     })
   };
   return Lojas;
