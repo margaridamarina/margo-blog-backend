@@ -12,6 +12,8 @@ router.put('/receitas/:receitaId', ReceitasController.atualizaReceita)
 router.delete('/receitas/:receitaId', ReceitasController.apagaReceita)
 // router.receita('/receitas/:receitaId', ReceitasController.restauraReceita)
 
-router.get('/receitas/subcategorias/:subcategoriaTitle/', ReceitasController.pegaTodasAsReceitasDeUmaSubcategoria)
+// router.get('/receitas/categorias/:categoriaTitle/', ReceitasController.pegaTodasAsReceitasDeUmaCategoria)
+// router.get('/receitas/subcategorias/:subcategoriaTitle/', ReceitasController.pegaTodasAsReceitasDeUmaSubcategoria)
+
 
 module.exports = router

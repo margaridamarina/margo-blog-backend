@@ -11,10 +11,4 @@ router.put('/subcategorias/:subcategoriaTitle', SubcategoriaController.atualizaS
 router.delete('/subcategorias/:subcategoriaTitle', SubcategoriaController.apagaSubcategoria)
 // router.post('/subcategorias/:subcategoriaId', SubcategoriaController.restauraSubcategoria)
 
-// router.get('/posts/:postId/subcategorias/:subcategoriaId', SubcategoriaController.pegaUmaSubcategoria)
-// router.post('/posts/:postId/subcategorias', SubcategoriaController.criaSubcategoria)
-// // router.post('/posts/:subcategoriaId/restaura', SubcategoriaController.restauraSubcategoria)
-// router.put('/posts/:postId/subcategorias/:subcategoriaId',  SubcategoriaController.atualizaSubcategoria)
-// router.delete('/posts/:postId/subcategorias/:subcategoriaId',  SubcategoriaController.apagaSubcategoria)
-
 module.exports = router

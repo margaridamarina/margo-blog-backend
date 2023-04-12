@@ -12,6 +12,7 @@ router.put('/lojas/:lojaId', LojaController.atualizaLoja)
 router.delete('/lojas/:lojaId', LojaController.apagaLoja)
 // router.Loja('/lojas/:lojaId', LojaController.restauraLoja)
 
+router.get('/lojas/categorias/:categoriaTitle/', LojaController.pegaTodasAsLojasDeUmaCategoria)
 router.get('/lojas/subcategorias/:subcategoriaTitle/', LojaController.pegaTodasAsLojasDeUmaSubcategoria)
 
 module.exports = router
