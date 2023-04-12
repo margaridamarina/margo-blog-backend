@@ -7,6 +7,7 @@ module.exports = {
 				description: 'Cuidar do mundo é tudo',
 				text: 'Era uma vez uma árvore',
 				subcategory_title: 'Reciclagem',
+				category_title: 'Sustentabilidade',
         		createdAt: new Date(),
 				updatedAt: new Date()
 			},
@@ -16,6 +17,7 @@ module.exports = {
 				description: 'Vamos meditar',
 				text: 'Imagine um rio que corre',
 				subcategory_title: 'Meditação',
+				category_title: 'Zen',
 		        createdAt: new Date(),
 				updatedAt: new Date()
 			},
@@ -24,7 +26,8 @@ module.exports = {
 				image: 'https://thumbs.dreamstime.com/z/ecologia-tecnologia-verde-conceito-de-projeto-org%C3%A2nico-bio-do-vetor-linha-fina-ilustra%C3%A7%C3%A3o-dos-desenhos-animados-para-112498968.jpg',
 				description: 'Tech é green, tech é pop',
 				text: 'Salve o mundo através de linhas de código',
-				subcategory_title: 'GreenTech',
+				subcategory_title: 'Green Tech',
+				category_title: 'Tecnologia',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}

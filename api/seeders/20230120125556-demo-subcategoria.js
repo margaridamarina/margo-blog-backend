@@ -31,7 +31,7 @@ module.exports = {
 			},
 			{
 				id: 6,
-				title: 'Corpo e casa',
+				title: 'Corpo',
         		category_title: 'Limpeza',
 				createdAt: new Date(),
 				updatedAt: new Date()
@@ -39,21 +39,14 @@ module.exports = {
 			{
 				id: 7,
 				title: 'Casa',
-        		category_title: 'Receitas',
-				createdAt: new Date(),
-				updatedAt: new Date()
-			},
-			{
-				id: 8,
-				title: 'Corpo',
-        		category_title: 'Receitas',
+        		category_title: 'Limpeza',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				id: 9,
-				title: 'Culinária',
-        		category_title: 'Receitas',
+				title: 'Saudável',
+        		category_title: 'Culinária',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}

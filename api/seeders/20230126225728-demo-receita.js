@@ -7,7 +7,8 @@ module.exports = {
 				description: 'Faça em casa seu lava roupas',
 				text: 'Ingredientes: 2 xicaras de bicarbonato de sodio no forno 180º por 1h, 1 barra sabao de coco, 2 xicaras bicarbonato de sodio, 30 gotas de oleo essencial de capim limao ou lavanda',
 				subcategory_title: 'Casa',
-        createdAt: new Date(),
+				category_title: 'Limpeza',
+        		createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
@@ -15,7 +16,8 @@ module.exports = {
 				image: 'https://img.freepik.com/vetores-premium/conceito-de-comida-saudavel-legumes-frutas-ilustracao-vetorial-de-agua-e-leite_36358-307.jpg?w=2000',
 				description: 'Comer, comer',
 				text: 'Comer é muito bom',
-				subcategory_title: 'Culinária',
+				subcategory_title: 'Saudável',
+				category_title: 'Culinária',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
@@ -25,7 +27,8 @@ module.exports = {
 				description: 'Faça em casa seu desodorante',
 				text: 'Ingredientes: 2/3 Leite de magnésia, 1/3 Água filtrada, Gotas óleo essencial lavanda (a cada 10 ml 3 gotas) ou 2 colheres de sopa de óleo de coco, Pote de spray. Misture tudo!',
 				subcategory_title: 'Corpo',
-		    createdAt: new Date(),
+				category_title: 'Limpeza',
+		    	createdAt: new Date(),
 				updatedAt: new Date()
 			}
 	], {})
