@@ -5,6 +5,7 @@ module.exports = {
     await queryInterface.createTable('Categorias', {
       id: {
         allowNull: false,
+        unique: true,
         type: Sequelize.INTEGER
       },
       title: {

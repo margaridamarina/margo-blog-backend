@@ -26,6 +26,11 @@ module.exports = {
         type: Sequelize.STRING,
         references: {model: 'Subcategorias', key: 'title'}
       },
+      category_title: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        references: {model: 'Categorias', key: 'title'}
+      },
       url_store: {
         type: Sequelize.STRING
       },
